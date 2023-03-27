@@ -50,3 +50,7 @@
 .product button:hover {
     background: #fab040;
 }
+
+.cart-button {
+    margin-right: 8px;
+}
