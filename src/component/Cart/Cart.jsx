@@ -9,16 +9,18 @@ const Cart = ({ cart }) => {
     for (const product of cart) {
         totalPrice = totalPrice + product.price;
         totalShipping = totalShipping + product.shipping;
-    }
-    let text = totalPrice * 7 / 100;
+    };
+
+    let tex = totalPrice * 7 / 100;
+    let grandTotal = totalPrice + totalShipping + tex;
 
     return (
         <div className='cart'>
             <h2 className='cart-title'>Order summary: {cart.length}</h2>
             <p>Total price: ${totalPrice}</p>
             <p>Total shipping charge: ${totalShipping}</p>
-            <p>Tex: ${text.toFixed(2)}</p>
-            <h6 className='gand-total'>Grand total: ${ }</h6>
+            <p>Tex: ${tex.toFixed(2)}</p>
+            <h6 className='gand-total'>Grand total: ${grandTotal.toFixed(2)}</h6>
         </div>
     );
 };
