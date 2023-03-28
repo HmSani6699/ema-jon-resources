@@ -1,0 +1,10 @@
+/* order summary style */
+.cart {
+    background: rgba(255, 153, 0, 0.3);
+    padding: 15px;
+}
+
+.cart-title {
+    text-align: center;
+    font-weight: bold;
+}
