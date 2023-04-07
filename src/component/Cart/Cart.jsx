@@ -2,13 +2,16 @@ import React from 'react';
 import './Cart.css';
 
 const Cart = ({ cart }) => {
-    console.log(cart)
-
     let totalPrice = 0;
     let totalShipping = 0;
+    let quantity = 0;
     for (const product of cart) {
-        totalPrice = totalPrice + product.price;
+        if (product.quantity === 0) {
+            product.quantity = 1
+        }
+        totalPrice = totalPrice + product.price * product.quantity;
         totalShipping = totalShipping + product.shipping;
+        quantity = quantity + product.quantity;
     };
 
     let tex = totalPrice * 7 / 100;
@@ -16,7 +19,7 @@ const Cart = ({ cart }) => {
 
     return (
         <div className='cart'>
-            <h2 className='cart-title'>Order summary: {cart.length}</h2>
+            <h2 className='cart-title'>Order summary: {quantity}</h2>
             <p>Total price: ${totalPrice}</p>
             <p>Total shipping charge: ${totalShipping}</p>
             <p>Tex: ${tex.toFixed(2)}</p>
