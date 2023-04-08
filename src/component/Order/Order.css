@@ -1,3 +1,15 @@
 .review-container {
     margin: 50px auto;
 }
+
+.proceed-button {
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    background: #FF9900;
+    border-radius: 4px;
+    color: white;
+}
